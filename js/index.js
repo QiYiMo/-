@@ -307,6 +307,13 @@ const comput = function comput(ele, attr) {
         lock = playerCon.querySelector('.lock em');
 
     let key = storage.get('key') ? storage.get('key') : false;
+    
+    if(key) {
+        lock.className = 'lockUp';
+    } else {
+        lock.className = 'unlock';
+    }
+
     // 音乐hover
     const move = function move() {
         this.style.bottom = '0';
@@ -314,6 +321,8 @@ const comput = function comput(ele, attr) {
 
     // 锁住和未锁住移入的效果
     const lockWrap = function lockWrap() {
+        let key = storage.get('key') ? storage.get('key') : false;
+
         if (!key) {
             playerCon.style.bottom = '-46px';
             playerCon.addEventListener("mousemove", move);
@@ -325,6 +334,7 @@ const comput = function comput(ele, attr) {
 
     // 锁住
     lock.addEventListener("click", function () {
+        let key = storage.get('key') ? storage.get('key') : false;
         if (key) {
             key = false;
             this.className = 'unlock';
@@ -480,7 +490,7 @@ const playerRender = function playerRender() {
         singer = player.querySelector('a.singer'),
         end = player.querySelector('.end');
 
-    let { album: { name, picUrl }, artists: [artists], duration, url } = data;
+    let { album: { picUrl }, artists: [artists], duration, url, name } = data;
 
     const image = new Image();
     image.src = picUrl;
@@ -671,6 +681,7 @@ if (!storage.get('cache')) {
     const moveWrap = function moveWrap(duration) {
 
         let time = audio.currentTime;
+
         if (!duration) return;
 
         if (audio.ended) {
@@ -709,6 +720,7 @@ if (!storage.get('cache')) {
             itemr = setInterval(moveWrap, 1000, duration);
             return;
         }
+        // 关闭音乐
         if (target.className === 'suspend') {
             target.className = 'playbtn';
             audio.pause();
@@ -782,8 +794,15 @@ if (!storage.get('cache')) {
         audio.autoplay = true;
         audio.play();
         playbtn.className = 'suspend';
+        if (itemr !== null) {
+            clearInterval(itemr);
+            itemr = null;
+        }
         itemr = setInterval(moveWrap, 1000, play.duration);
     });
 })()
+
+
+
 
 
