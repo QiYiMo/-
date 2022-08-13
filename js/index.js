@@ -672,7 +672,6 @@ if (!storage.get('cache')) {
 
         let time = audio.currentTime;
         if (!duration) return;
-        console.log(audio.ended, duration);
 
         if (audio.ended) {
             clearInterval(itemr);
