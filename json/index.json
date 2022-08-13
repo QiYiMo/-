@@ -1,0 +1,192 @@
+[
+    {
+        "album": {
+            "id": 0,
+            "name": "虞兮叹",
+            "picUrl": "http://p3.music.126.net/6gdwWjPXUkyTx4CuuSxkIg==/109951165319864977.jpg"
+        },
+        "artists": [
+            {
+                "name": "闻人听書_",
+                "src": "https://p2.music.126.net/nP1sMj0BzE2l3yCwwNQT5g==/109951163715063588.jpg"
+            }
+        ],
+        "duration": 210000,
+        "name": "虞兮叹",
+        "url": "./music/闻人听書_ - 虞兮叹.mp3",
+        "quantity": "1151万"
+    },
+    {
+        "album": {
+            "id": 1,
+            "name": "牵丝戏",
+            "picUrl": "http://p3.music.126.net/Nd86SOcyCxU5Qu7jdZn_MQ==/7725168696876736.jpg"
+        },
+        "artists": [
+            {
+                "name": "银临",
+                "src": "https://p2.music.126.net/CpUdHPNvBvN7kebvL21TTA==/109951163676573083.jpg"
+            },
+            {
+                "name": "Aki阿杰",
+                "src": "https://p2.music.126.net/B3hUHNikwrut3CQaCn7beA==/18645518184009019.jpg"
+            }
+        ],
+        "duration": 239302,
+        "name": "牵丝戏",
+        "url": "./music/牵丝戏.m4a",
+        "quantity": "2453万"
+    },
+    {
+        "album": {
+            "id": 2,
+            "name": "红昭愿",
+            "picUrl": "http://p4.music.126.net/8ltR3o9R8uJ9_5Cc71cDhA==/109951162951242154.jpg"
+        },
+        "artists": [
+            {
+                "name": "音阙诗听",
+                "src": "https://p2.music.126.net/WSxQCBXPPI-41Qz77fLsOw==/109951162809092287.jpg"
+            }
+        ],
+        "duration": 173217,
+        "name": "红昭愿",
+        "url": "./music/红昭愿.m4a",
+        "quantity": "975万"
+    },
+    {
+        "album": {
+            "id": 3,
+            "name": "广寒谣",
+            "picUrl": "http://p4.music.126.net/VQ4bemCFWvtQL5Xao5G3oQ==/109951164542688776.jpg"
+        },
+        "artists": [
+            {
+                "name": "伊格赛听",
+                "src": "https://p1.music.126.net/YMMfWjkAK_o0efkzCMda6g==/109951163943020313.jpg"
+            },
+            {
+                "name": "不靠谱组合",
+                "src": "https://p2.music.126.net/CiJwSsv55AM4UxNxDfwDeg==/109951162960115346.jpg"
+            }
+        ],
+        "duration": 185984,
+        "name": "广寒谣",
+        "url": "./music/广寒谣.m4a",
+        "quantity": "347"
+    },
+    {
+        "album": {
+            "id": 4,
+            "name": "人间不值得",
+            "picUrl": "http://p4.music.126.net/oVCpfPtfAqNcAbRWMU7ffA==/109951163801547166.jpg"
+        },
+        "artists": [
+            {
+                "name": "黄诗扶",
+                "src": "https://p2.music.126.net/I5Azm1ItXbPTpnghYMLKEA==/109951165807894671.jpg"
+            }
+        ],
+        "duration": 232060,
+        "name": "九万字",
+        "url": "./music/九万字.mp3",
+        "quantity": "999万"
+    },
+    {
+        "album": {
+            "id": 5,
+            "name": "高考必背曲目",
+            "picUrl": "http://p3.music.126.net/NQBaw13hHiaTh41QQUYsQg==/109951162922231753.jpg"
+        },
+        "artists": [
+            {
+                "name": "奇然",
+                "src": "https://p2.music.126.net/0SGQdOZqBtnrYa0SmRiJxA==/109951167324331056.jpg"
+            },
+            {
+                "name": "沈谧仁",
+                "src": "https://p1.music.126.net/sMTp46hFoRGnoy9bzt7IuQ==/109951163235347274.jpg"
+            }
+        ],
+        "duration": 335255,
+        "name": "琵琶行",
+        "url": "./music/琵琶行.m4a",
+        "quantity": "212"
+    },
+    {
+        "album": {
+            "id": 6,
+            "name": "萧音弥漫",
+            "picUrl": "http://p3.music.126.net/OM6prM7Fg07e9oLHY2HsTQ==/18823639069522222.jpg"
+        },
+        "artists": [
+            {
+                "name": "萧忆情Alex",
+                "src": "https://p2.music.126.net/jHzqXftvf1IsETwQWk_2ug==/109951165851475649.jpg"
+            }
+        ],
+        "duration": 215172,
+        "name": "拜无忧",
+        "url": "./music/拜无忧.m4a",
+        "quantity": "1790万"
+    },
+    {
+        "album": {
+            "id": 7,
+            "name": "沈园外",
+            "picUrl": "http://p4.music.126.net/71-o5KBigt8HB4G9ZU2CgQ==/109951165589669156.jpg"
+        },
+        "artists": [
+            {
+                "name": "阿YueYue",
+                "src": "https://p1.music.126.net/1uUVJVDWg65HSKk_ux2O1A==/109951165839091583.jpg?param=130y130"
+            },
+            {
+                "name": "戾格",
+                "src": "https://p2.music.126.net/_IDBBUbxiqaMITlWVMPwsg==/109951166688321935.jpg?param=130y130"
+            },
+            {
+                "name": "小田音乐社",
+                "src": "https://p1.music.126.net/rrsTX4Rxyo-UVcHMRfJfwA==/109951164089863948.jpg?param=130y130"
+            }
+        ],
+        "duration": 223424,
+        "name": "沈园外",
+        "url": "./music/沈园外.m4a",
+        "quantity": "703万"
+    },
+    {
+        "album": {
+            "id": 8,
+            "name": "长生诀",
+            "picUrl": "http://p3.music.126.net/ZUev7OhmNBD1gmuW1km7ew==/109951162867290084.jpg"
+        },
+        "artists": [
+            {
+                "name": "西瓜JUN",
+                "src": "https://p2.music.126.net/AraeYJzkaCOGZPTKbzMY0w==/109951165912051572.jpg?param=130y130"
+            }
+        ],
+        "duration": 191738,
+        "name": "长生诀",
+        "url": "./music/长生诀.m4a",
+        "quantity": "1655万"
+    },
+    {
+        "album": {
+            "id": 9,
+            "name": "东风志",
+            "picUrl": "http://p4.music.126.net/NdkVhzGfEK05vo10-xM3Hg==/109951167180098707.jpg"
+        },
+        "artists": [
+            {
+                "name": "Aki阿杰",
+                "src": "https://p2.music.126.net/B3hUHNikwrut3CQaCn7beA==/18645518184009019.jpg?param=130y130"
+            }
+        ],
+        "duration": 271517,
+        "name": "东风志",
+        "url": "./music/东风志.m4a",
+        "quantity": "2236万"
+    }
+]
