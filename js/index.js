@@ -134,7 +134,7 @@ const comput = function comput(ele, attr) {
                 item.className = '';
             }
         })
-        paginationWrap()
+        paginationWrap();
     };
 
     // 向右移动
@@ -184,8 +184,6 @@ const comput = function comput(ele, attr) {
                 scrollLeftWrap();
             }
         });
-
-
     });
 
     // 出页面时不循环
