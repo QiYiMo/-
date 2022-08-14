@@ -569,6 +569,13 @@ const listRender = function listRender() {
     const data = storage.get('playLink'),
         listSong = document.querySelector('.listBotton .listSong'),
         songName = document.querySelector('.playListWrap .songName');
+    // 若没有数据，则不渲染
+    if (data == null) {
+        listSong.innerHTML = '';
+        songName.innerHTML = '';
+        return;
+    }
+    // 有数据时
     let { name, artists, duration } = data,
         str = '',
         nameList;
@@ -638,16 +645,12 @@ if (!storage.get('cache')) {
         storage.set('cache', data);
         render();
         playerRender();
-        if (storage.get('playLink')) {
-            listRender();
-        }
+        listRender();
     })();
 } else {
     render();
     playerRender();
-    if (storage.get('playLink')) {
-        listRender();
-    }
+    listRender();
 };
 
 // 歌曲播放事件
@@ -666,10 +669,8 @@ if (!storage.get('cache')) {
     /* 播放音乐 以及拉动进度条 */
     // 播放音乐DOM
     const player = document.querySelector('.player'),
-        [leftbtn, playbtn, rightbtn] = Array.from(player.querySelectorAll('.playButton a')),
-        imgBox = player.querySelector('.playImg img');
+        [leftbtn, playbtn, rightbtn] = Array.from(player.querySelectorAll('.playButton a'));
     const progressBar = player.querySelector('.progressBar'),
-        end = progressBar.querySelector('.end'),
         start = progressBar.querySelector('.start');
 
     // 拉动进度条DOM
@@ -681,7 +682,7 @@ if (!storage.get('cache')) {
 
     // 自动推动进度条
     const moveWrap = function moveWrap(duration) {
-
+        // 获取当前播放时间
         let time = audio.currentTime;
 
         if (!duration) return;
@@ -709,11 +710,11 @@ if (!storage.get('cache')) {
         const volumeBox = document.querySelector('.volumeBox');
         let { target } = e,
             name = target.className;
-        let { duration } = storage.get('playLink');
         if (!name) return (volumeBox.style.display = 'none');
         if (name !== 'playbtn' && name !== 'suspend' && name !== "volume") return;
         if (!audio.src) return;
 
+        let { duration } = storage.get('playLink');
         // 播放音乐
         if (target.className === 'playbtn') {
             audio.play();
@@ -757,19 +758,25 @@ if (!storage.get('cache')) {
         audio.currentTime = startTime;
         start.innerHTML = timePlay(startTime);
     };
-
+    // 按下事件
     document.addEventListener("mousedown", function (e) {
         let { target } = e;
-        if (target !== spot) return;
-        audio.pause();
+        if (target !== spot || !audio.src) return;
+        // 检测如果是播放状态时，则暂停播放
+        if (playbtn.className === 'suspend') {
+            audio.pause();
+        }
         document.addEventListener("mousemove", move);
     });
-
+    // 抬起事件
     document.addEventListener("mouseup", function (e) {
         let { target } = e;
         if (target !== spot) return;
         document.removeEventListener("mousemove", move);
-        audio.play();
+        // 抬起后如果检测时播放状态，则继续播放
+        if (playbtn.className === 'suspend') {
+            audio.play();
+        }
     });
 
     // 点击网页上任意一个播放按钮
