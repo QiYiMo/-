@@ -14,6 +14,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 #app nav {
   height: 105px;
@@ -55,6 +56,7 @@ body {
   font-size: 14px;
   line-height: 68px;
   cursor: pointer;
+  overflow: hidden;
 }
 #app nav .navTop .content .menu li span {
   padding: 0 19px;
@@ -270,7 +272,7 @@ body {
 }
 #app .scrollCon .download {
   position: absolute;
-  right: 269px;
+  right: 0;
   top: 0;
   width: 254px;
   height: 285px;
@@ -304,6 +306,7 @@ body {
   min-height: 700px;
   box-sizing: border-box;
   display: flex;
+  position: relative;
 }
 #app .hotspotWrap .spotWrap {
   min-height: 700px;
@@ -991,6 +994,7 @@ body {
   position: absolute;
   right: 15px;
   top: -14px;
+  z-index: -1;
 }
 #app .playerCon .lock em {
   position: absolute;
@@ -1017,18 +1021,18 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 95.6%;
+  width: 100%;
   height: 53px;
   background: url(../image/playbar.png) repeat-x 0 9999px;
   background-position: 0 0;
-  z-index: -1;
+  z-index: -2;
 }
 #app .playerCon .playerBG::after {
   content: '';
   width: 50px;
   height: 53px;
   position: absolute;
-  right: -102px;
+  right: -32px;
   top: 0;
   background: url(../image/playbar.png) repeat-x 0 9999px;
   background-position: 0 0;
