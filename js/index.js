@@ -305,8 +305,8 @@ const comput = function comput(ele, attr) {
         lock = playerCon.querySelector('.lock em');
 
     let key = storage.get('key') ? storage.get('key') : false;
-    
-    if(key) {
+
+    if (key) {
         lock.className = 'lockUp';
     } else {
         lock.className = 'unlock';
@@ -638,12 +638,16 @@ if (!storage.get('cache')) {
         storage.set('cache', data);
         render();
         playerRender();
-        listRender();
+        if (storage.get('playLink')) {
+            listRender();
+        }
     })();
 } else {
     render();
     playerRender();
-    listRender();
+    if (storage.get('playLink')) {
+        listRender();
+    }
 };
 
 // 歌曲播放事件
