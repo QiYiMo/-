@@ -56,6 +56,7 @@ const comput = function comput(ele, attr) {
     loginCode.addEventListener("click", function (e) {
         let { target } = e,
             name = target.className;
+
         // 关闭
         if (name === 'close') {
             this.style.display = 'none';
@@ -68,13 +69,16 @@ const comput = function comput(ele, attr) {
         }
 
     });
-    // 登录
+    // 扫码登录
     loginImg.addEventListener("click", function (e) {
         let { target } = e,
             name = target.className;
+
+
+
         // 关闭
         if (name === 'close') {
-            this.style.display = 'none';
+            loginImg.style.display = 'none';
             return;
         }
 
@@ -661,6 +665,8 @@ if (!storage.get('cache')) {
             spot = stripWrap.querySelector('.spot'),
             change = stripWrap.querySelector('.change');
 
+
+
         spot.style.transform = 'none';
         change.style.width = '0';
 
@@ -671,7 +677,13 @@ if (!storage.get('cache')) {
     const player = document.querySelector('.player'),
         [leftbtn, playbtn, rightbtn] = Array.from(player.querySelectorAll('.playButton a'));
     const progressBar = player.querySelector('.progressBar'),
-        start = progressBar.querySelector('.start');
+        start = progressBar.querySelector('.start'),
+        playerCon = document.querySelector('.playerCon'),
+        btnList = Array.from(document.querySelectorAll('.btnWrap li a')),
+        loginWrap = document.getElementsByClassName('loginWrap')[0],
+        collectionAll = Array.from(document.querySelectorAll('.collection')), add = Array.from(document.querySelectorAll('.add'));
+
+    const playIcon = Array.from(document.querySelectorAll('.playIcon')).slice(0, 3);
 
     // 拉动进度条DOM
     const spot = progressBar.querySelector('.spot'),
@@ -743,6 +755,14 @@ if (!storage.get('cache')) {
         }
     });
 
+    // document的音乐的左右点击事件
+    document.addEventListener("click", function (e) {
+        let { target } = e;
+        if (!(target === leftbtn || target === rightbtn)) return;
+        audio.currentTime = 0;
+        reset();
+    })
+
     // 拖动进度条
     const move = function move(e) {
         let { clientX } = e,
@@ -779,15 +799,32 @@ if (!storage.get('cache')) {
         }
     });
 
+    // 点击收藏和添加按钮按钮
+    document.addEventListener("click", function (e) {
+        let { target } = e;
+        if (!btnList.includes(target) && !collectionAll.includes(target) && !add.includes(target)) return;
+        loginWrap.style.display = 'block';
+    })
+
+
+
     // 点击网页上任意一个播放按钮
     document.addEventListener("click", function (e) {
         let { target } = e, link, play, data;
-        if (target.className !== "play") return;
-        link = target.getAttribute('data-link');
+        let key = storage.get('key') ? storage.get('key') : false;
+
+        if (target.className !== "play" && !playIcon.includes(target)) return;
+        if (playIcon.includes(target)) {
+            link = "./music/闻人听書_ - 虞兮叹.mp3";
+        } else {
+            link = target.getAttribute('data-link');
+        }
+
         data = storage.get('cache');
         play = data.find(item => {
             return item.url === link;
         });
+
         if (audio.src) {
             audio.pause();
             audio.src = '';
@@ -803,12 +840,23 @@ if (!storage.get('cache')) {
         audio.autoplay = true;
         audio.play();
         playbtn.className = 'suspend';
+        if (!key) {
+            playerCon.style.bottom = '0px';
+            let timer = setTimeout(function () {
+                playerCon.style.bottom = '-46px';
+                clearTimeout(timer);
+                timer = null;
+            }, 1000);
+        };
+
+
         if (itemr !== null) {
             clearInterval(itemr);
             itemr = null;
         }
         itemr = setInterval(moveWrap, 1000, play.duration);
     });
+
 })()
 
 
