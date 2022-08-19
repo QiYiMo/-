@@ -790,8 +790,6 @@ if (!storage.get('cache')) {
     });
     // 抬起事件
     document.addEventListener("mouseup", function (e) {
-        let { target } = e;
-        if (target !== spot) return;
         document.removeEventListener("mousemove", move);
         // 抬起后如果检测时播放状态，则继续播放
         if (playbtn.className === 'suspend') {
